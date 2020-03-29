@@ -8,9 +8,9 @@ public class Main {
 
 
     //Child child = new Child();
-   // child.createChild();
-        // Parent parent = new Parent();
-    //parent.getParentData();
+    //child.createChild();
+    Parent parent = new Parent();
+    parent.parentInfo();
 
         Database database = new Database();
         database.getTeacherData();
