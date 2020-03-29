@@ -24,16 +24,16 @@ public class Database {
             //3.Execute query for database schedule time table
             myState.executeUpdate("INSERT INTO schedule_time(date, start, end, duration) " +
                     "VALUES(" + "'" + date + "'," + startTime + "," + endTime + "," + duration + ")");
-
+/*
             //4.Execute query for schedule_time for get time_id
             ResultSet rs = myState.executeQuery("SELECT * from schedule_time");
 
             while (rs.next()) {
                 time_id = rs.getInt(1);
             }
-
+*/
             //5.insert data to schedule table
-            myState.executeUpdate("INSERT INTO schedule(teacher_id, time_id) VALUES(" + teacher_id + ", " + time_id + ")");
+            myState.executeUpdate("INSERT INTO schedule(teacher_id) VALUES(" + teacher_id + ")");
 
             //6.When shift id is created, then put it inside schedule_time table
             ResultSet rs1 = myState.executeQuery("SELECT * from schedule");
@@ -64,10 +64,10 @@ public class Database {
             ResultSet scheResult = scheState.executeQuery("SELECT * FROM Schedule");
 
 
-            System.out.println("|Shift_id|teacher_id|time_id|");
+            System.out.println("|Shift_id|teacher_id|");
             while (scheResult.next()){
 
-                System.out.println("|   " + scheResult.getInt(1) + "   | " + scheResult.getInt(2) + "       | " + scheResult.getInt(3) + "      | ");
+                System.out.println("|   " + scheResult.getInt(1) + "   |   " + scheResult.getInt(2) + "   |");
             }
 
             ResultSet timeResult = scheState.executeQuery("SELECT * FROM schedule_time");
