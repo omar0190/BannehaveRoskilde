@@ -145,8 +145,6 @@ public class Database {
             e.printStackTrace();
         }
     }
-
-
     public void getChildData(){
         try {
             //1.Get a conncection to database
@@ -169,56 +167,73 @@ public class Database {
         }
 
     }
-        public void createChildData(int child_cpr, String name, double pickupTime, int teacher_id, int parent_id){
-       /*
-        int child_cpr = 0;
-        String name;
-        double pickupTime = 0;
-        int teacher_id = 0;
-        int parent_id = 0;
-*/
-
-            try {
-                //1.Get a conncection to database
-                Connection myCon = DriverManager.getConnection(url, user, password);
-
-                //2.Create statement
-                Statement myState = myCon.createStatement();
-
-                //3.Execute query for database child table
-                myState.executeUpdate("INSERT INTO child(child_cpr, name , pickupTime, teacher_id, parent_id) " +
-                        "VALUES(" + child_cpr + ",'" + name + "'," + pickupTime + "," + teacher_id + " ', " + parent_id + ")");
-                //4.Execute query for child table
-                ResultSet rs = myState.executeQuery("SELECT * from child");
+    public void createChildData(int child_cpr, String name, double pickupTime, int teacher_id, int parent_id){
 
 
-            } catch (SQLException e) {
-                e.printStackTrace();
+        try {
+            //1.Get a conncection to database
+            Connection myCon = DriverManager.getConnection(url, user, password);
+
+            //2.Create statement
+            Statement myState = myCon.createStatement();
+
+            //3.Execute query for database child table
+            myState.executeUpdate("INSERT INTO child(child_cpr, name , pickupTime, teacher_id, parent_id) " +
+                    "VALUES(" + child_cpr + ",'" + name + "'," + pickupTime + "," + teacher_id + " ',' " + parent_id + ")");
+            //4.Execute query for parent table
+            ResultSet rs = myState.executeQuery("SELECT * from parent");
+
+            while(rs.next()){
+                parent_id =rs.getInt(1);
             }
+            //5.insert data to child table
+            myState.executeUpdate("INSERT INTO child(parent_id) VALUES(" + parent_id + ")");
 
-
-        }
-        public void createParentData(String dadName, String momName, String adress, int phoneNumber, String email){
-            try {
-                //1.Get a conncection to database
-                Connection myCon = DriverManager.getConnection(url, user, password);
-
-                //2.Create statement
-                Statement myState = myCon.createStatement();
-
-                //3.Execute query for database child table
-                myState.executeUpdate("INSERT INTO parent(DadName, MomName , adress, phoneNumber, email) " +
-                        "VALUES('" + dadName + "','" + momName + "', '" + adress + "' ," + phoneNumber + ", '" + email + "')");
-                //4.Execute query for child table
-                ResultSet rs = myState.executeQuery("SELECT * from parent");
-
-
-            } catch (SQLException e) {
-                e.printStackTrace();
+            //6.When parent id is created, then put it inside child_table table
+            ResultSet rs1 = myState.executeQuery("SELECT * from child");
+            while (rs1.next()) {
+                parent_id  = rs1.getInt(1);
             }
+            //Insert shift id into schedule_time table
+            String addId = "update child set parent_id = "+ parent_id;
+            myState.executeUpdate(addId);
 
 
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+
+    }
+    public static void createParentData(int parent_id, String DadName, String MomName, String adress, int phoneNumber, String email){
+        String url = "jdbc:mysql://den1.mysql4.gear.host/roskildeit123";
+        String user = "roskildeit123";
+        String password = "_Roskilde123";
+        try {
+            //1.Get a conncection to database
+            Connection myCon = DriverManager.getConnection(url, user, password);
+
+            //2.Create statement
+            Statement myState = myCon.createStatement();
+
+            //3.Execute query for database child table
+            myState.executeUpdate("INSERT INTO parent(parent_id, DadName, MomName , Adress, phoneNumber, email) " +
+                    "VALUES(" + parent_id + ",' " + DadName + ",'" + MomName + "'," + adress + "," + phoneNumber + " '," + email + ")");
+            //4.Execute query for child table
+            ResultSet rs = myState.executeQuery("SELECT * from parent");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Wrong input try again");
         }
+
+
+    }
+
+}
+
+
 
 

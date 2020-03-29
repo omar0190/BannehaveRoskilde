@@ -1,4 +1,5 @@
 package com.company.java;
+
 import java.util.*;
 public class Child {
     String name;
@@ -22,13 +23,14 @@ public class Child {
                 child_cpr = scan.nextInt();
                 System.out.println("When is the child supposed to be picked up?: ");
                 pickupTime = scan.nextDouble();
+                database.getTeacherData();
                 System.out.println("Assign teacher to the child. Input teacherID: ");
                 teacher_id = scan.nextInt();
-                database.getTeacherData();
                 //print liste a lærer, så man kan vælge en lærer
                 System.out.println("Assign parents to the child. Input parentID: ");
                 parent_id = scan.nextInt();
                 //Du skal først oprette parent, hvor du indsætter oplysninger i parent table, hvor du efterfølgende bruger
+                //
 
                 database.createChildData(child_cpr, name, pickupTime, teacher_id, parent_id);
 
@@ -47,14 +49,17 @@ public class Child {
 
 
     }
-    public void editChild(){ // Ikke færdig
+
+
+}
+    /*public void editChild(){ // Ikke færdig
         System.out.println("Do you want to edit a child (y/n)");
         database.getChildData();
         System.out.println("Input the ID of the child you want to edit");
 
 
 
-    }
+    }*/
 
     /*
     public void deleteChild(){ // Ikke færdig
@@ -75,9 +80,5 @@ public class Child {
 
 */
 
-
-
-
-    }
 
 
