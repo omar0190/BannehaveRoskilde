@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42bc12c2-9a6b-436c-8c1f-7c84579aa4d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/java/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="42bc12c2-9a6b-436c-8c1f-7c84579aa4d2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Dropbox/Roskilde Børnehave/mysql-connector-java-8.0.19.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,6 +74,7 @@
       <updated>1585409323685</updated>
       <workItem from="1585409325601" duration="14741000" />
       <workItem from="1585511645061" duration="1090000" />
+      <workItem from="1585512914185" duration="77000" />
     </task>
     <servers />
   </component>
@@ -100,29 +98,29 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="395" y="61" key="DetectedRootsChooserDialog/0.0.1280.689@0.0.1280.689" timestamp="1585409377961" />
-    <state x="348" y="87" key="FileChooserDialogImpl" timestamp="1585485189774">
+    <state x="348" y="87" key="FileChooserDialogImpl" timestamp="1585512987262">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="348" y="87" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1585485189774" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1585512754575">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state x="348" y="87" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1585512987262" />
+    <state width="1222" height="164" key="GridCell.Tab.0.bottom" timestamp="1585512995979">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1222" height="164" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1585510868182" />
+    <state width="1222" height="164" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1585512995979" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.832@0.23.1440.832" timestamp="1585512754575" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1585512754573">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1222" height="164" key="GridCell.Tab.0.center" timestamp="1585512995979">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1222" height="164" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1585510868182" />
+    <state width="1222" height="164" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1585512995979" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.832@0.23.1440.832" timestamp="1585512754573" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1585512754572">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1222" height="164" key="GridCell.Tab.0.left" timestamp="1585512995979">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1222" height="164" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1585510868182" />
+    <state width="1222" height="164" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1585512995979" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.832@0.23.1440.832" timestamp="1585512754572" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1585512754574">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state width="1222" height="164" key="GridCell.Tab.0.right" timestamp="1585512995979">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1222" height="164" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1585510868182" />
+    <state width="1222" height="164" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1585512995979" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.832@0.23.1440.832" timestamp="1585512754574" />
     <state width="1222" height="204" key="GridCell.Tab.1.bottom" timestamp="1585508119098">
       <screen x="0" y="0" width="1280" height="689" />
@@ -140,10 +138,10 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1222" height="204" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1585508119098" />
-    <state x="136" y="23" width="1024" height="832" key="SettingsEditor" timestamp="1585512746887">
-      <screen x="0" y="23" width="1440" height="832" />
+    <state x="121" y="0" width="1024" height="832" key="SettingsEditor" timestamp="1585512990196">
+      <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="121" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585485272171" />
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1585512990196" />
     <state x="136" y="23" width="1024" height="832" key="SettingsEditor/0.23.1440.832@0.23.1440.832" timestamp="1585512746887" />
     <state x="297" y="155" key="run.anything.popup" timestamp="1585491764612">
       <screen x="0" y="0" width="1280" height="689" />
