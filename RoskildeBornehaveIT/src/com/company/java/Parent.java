@@ -11,36 +11,42 @@ public class Parent {
     String Address;
     int phoneNumber;
     String email;
+    int zip;
 
 
     Scanner scan = new Scanner(System.in);
     Database database = new Database();
 
 
+
+
     public void parentInfo(){
         try {
 
 
-            System.out.println("Assign parent_id");
-            parent_id = scan.nextInt();
-            System.out.println("Assign the name of the father: ");
+            //System.out.println("Assign parent_id");
+            //parent_id = scan.nextInt();
+            System.out.print("Assign the name of the father: ");
             DadName = scan.nextLine();
-            System.out.println("Assign the name of the mother: ");
+            System.out.print("Assign the name of the mother: ");
             MomName = scan.nextLine();
-            System.out.println("What is the adress of the family?: ");
+            System.out.print("What is the address of the family?: ");
             Address = scan.nextLine();
-            System.out.println("What is the phonenumber of the contactperson?: ");
+            System.out.print("What is the zip code?: ");
+            zip = scan.nextInt();
+            System.out.print("What is the phone number of the contact person?: ");
             int phoneNumber = scan.nextInt();
+            System.out.print("What is the email of the contact person?:");
+            String email = scan.next();
 
-            System.out.println("What is the email of the contactperson?:");
-            String email = scan.nextLine();
+            database.createParentData(DadName, MomName, Address, phoneNumber, zip, email);
+
 
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Wrong input. Try Again");
         }
 
-        Database.createParentData(parent_id, DadName, MomName, Address, phoneNumber, email);
 
     }
 

@@ -11,29 +11,29 @@ public class Child {
 
     Scanner scan = new Scanner(System.in);
     Database database = new Database();
+    Parent parent = new Parent();
 
     public void createChild(){ // Ikke færdig
 
         try {
             do {
-                database.getChildData();
-                System.out.println("Write the child name: ");
+                System.out.println("|Register child|");
+
+                System.out.print("Write the child name: ");
                 name = scan.nextLine();
-                System.out.println("Input child social security number: ");
+                System.out.print("Input child social security number: ");
                 child_cpr = scan.nextInt();
-                System.out.println("When is the child supposed to be picked up?: ");
+                System.out.print("When is the child supposed to be picked up?: ");
                 pickupTime = scan.nextDouble();
+// sætter forældre oplysninger ind i databasen
+                parent.parentInfo();
+
                 database.getTeacherData();
-                System.out.println("Assign teacher to the child. Input teacherID: ");
+                System.out.print("Assign teacher to the child (Input teacherID): ");
                 teacher_id = scan.nextInt();
-                //print liste a lærer, så man kan vælge en lærer
-                System.out.println("Assign parents to the child. Input parentID: ");
-                parent_id = scan.nextInt();
-                //Du skal først oprette parent, hvor du indsætter oplysninger i parent table, hvor du efterfølgende bruger
-                //
 
-                database.createChildData(child_cpr, name, pickupTime, teacher_id, parent_id);
-
+                database.createChildData(child_cpr, name, pickupTime, teacher_id);
+                System.out.println("Child registered");
                 System.out.println("Do you want to add more kids to the kindergarten (y/n)");
                 String moreKidsInput = scan.next();
                 if(moreKidsInput.equals("n") || moreKidsInput.equals("N")){
@@ -49,6 +49,12 @@ public class Child {
 
 
     }
+
+    public void getChildren(){
+        System.out.println("|List of Children|");
+        database.getChildData();
+    }
+
 
 
 }

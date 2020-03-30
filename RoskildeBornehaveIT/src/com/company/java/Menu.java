@@ -6,6 +6,7 @@ public class Menu {
 
     Scanner scan = new Scanner(System.in);
     Schedule schedule = new Schedule();
+    Child child = new Child();
 
 
     public void managerMenu() {
@@ -34,14 +35,15 @@ public class Menu {
 
                 //Menu 1
                 if (seletedNum == 1) {
-                    Child child = new Child();
+
                     child.createChild();
 
                 }
 
                 //Menu 2
                 if (seletedNum == 2) {
-
+                    Database database = new Database();
+                    database.createParentData("a", "b", "c", 2332, 32443423, "a@.com");
                 }
 
                 //Menu 3
@@ -51,7 +53,7 @@ public class Menu {
 
                 //Menu 4
                 if (seletedNum == 4) {
-
+                    child.getChildren();
                 }
 
                 //Menu 5

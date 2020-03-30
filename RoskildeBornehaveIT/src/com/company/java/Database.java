@@ -42,7 +42,7 @@ public class Database {
             }
 
             //Insert shift id into schedule_time table
-            String addId = "update schedule_time set shift_id = "+ shift_id + " where time_id = " + time_id;
+            String addId = "update schedule_time set shift_id = " + shift_id + " where time_id = " + time_id;
             myState.executeUpdate(addId);
 
 
@@ -65,7 +65,7 @@ public class Database {
 
 
             System.out.println("|Shift_id|teacher_id|");
-            while (scheResult.next()){
+            while (scheResult.next()) {
 
                 System.out.println("|   " + scheResult.getInt(1) + "   |   " + scheResult.getInt(2) + "   |");
             }
@@ -73,12 +73,10 @@ public class Database {
             ResultSet timeResult = scheState.executeQuery("SELECT * FROM schedule_time");
 
 
-
             System.out.println("\n|time_id|shift_id|date|start|end|duration|");
-            while (timeResult.next()){
+            while (timeResult.next()) {
                 System.out.println("| " + timeResult.getInt(1) + " | " + timeResult.getInt(2) + " | " + timeResult.getString(3) + " | " + timeResult.getDouble(4) + " | " + timeResult.getDouble(5) + " | " + timeResult.getDouble(6) + " |");
             }
-
 
 
         } catch (SQLException e) {
@@ -106,7 +104,7 @@ public class Database {
     }
 
 
-    public void registerTeacher(String name, int phoneNumber, String email, int manager_id){
+    public void registerTeacher(String name, int phoneNumber, String email, int manager_id) {
         try {
             //1.Get a conncection to database
             Connection myCon = DriverManager.getConnection(url, user, password);
@@ -145,7 +143,8 @@ public class Database {
             e.printStackTrace();
         }
     }
-    public void getChildData(){
+
+    public void getChildData() {
         try {
             //1.Get a conncection to database
             Connection myCon = DriverManager.getConnection(url, user, password);
@@ -167,8 +166,10 @@ public class Database {
         }
 
     }
-    public void createChildData(int child_cpr, String name, double pickupTime, int teacher_id, int parent_id){
 
+    public void createChildData(int child_cpr, String name, double pickupTime, int teacher_id) {
+
+        int parent_id = 0;
 
         try {
             //1.Get a conncection to database
@@ -177,27 +178,35 @@ public class Database {
             //2.Create statement
             Statement myState = myCon.createStatement();
 
-            //3.Execute query for database child table
-            myState.executeUpdate("INSERT INTO child(child_cpr, name , pickupTime, teacher_id, parent_id) " +
-                    "VALUES(" + child_cpr + ",'" + name + "'," + pickupTime + "," + teacher_id + " ',' " + parent_id + ")");
             //4.Execute query for parent table
             ResultSet rs = myState.executeQuery("SELECT * from parent");
 
-            while(rs.next()){
-                parent_id =rs.getInt(1);
+            while (rs.next()) {
+                parent_id = rs.getInt(1);
             }
-            //5.insert data to child table
+
+            //3.Execute query for database child table
+            String sql = "INSERT INTO child(child_cpr, name , pickupTime, teacher_id, parent_id) VALUES("+child_cpr+", '"+name+"', "+pickupTime+", "+teacher_id + ", " +parent_id+")";
+            myState.executeUpdate(sql);
+
+
+
+            /*
+            //5.insert parent_id to child table
             myState.executeUpdate("INSERT INTO child(parent_id) VALUES(" + parent_id + ")");
+
 
             //6.When parent id is created, then put it inside child_table table
             ResultSet rs1 = myState.executeQuery("SELECT * from child");
             while (rs1.next()) {
-                parent_id  = rs1.getInt(1);
+                parent_id = rs1.getInt(1);
             }
+
             //Insert shift id into schedule_time table
-            String addId = "update child set parent_id = "+ parent_id;
+            String addId = "update child set parent_id = " + parent_id;
             myState.executeUpdate(addId);
 
+             */
 
 
         } catch (SQLException e) {
@@ -206,7 +215,8 @@ public class Database {
 
 
     }
-    public static void createParentData(int parent_id, String DadName, String MomName, String adress, int phoneNumber, String email){
+
+    public void createParentData(String dadName, String momName, String address, int zip, int phoneNumber, String email) {
         String url = "jdbc:mysql://den1.mysql4.gear.host/roskildeit123";
         String user = "roskildeit123";
         String password = "_Roskilde123";
@@ -218,15 +228,37 @@ public class Database {
             Statement myState = myCon.createStatement();
 
             //3.Execute query for database child table
-            myState.executeUpdate("INSERT INTO parent(parent_id, DadName, MomName , Adress, phoneNumber, email) " +
-                    "VALUES(" + parent_id + ",' " + DadName + ",'" + MomName + "'," + adress + "," + phoneNumber + " '," + email + ")");
+            String sql = "INSERT INTO parent(DadName, MomName , address, phoneNumber, zip, email) VALUES('"+dadName+"', '"+momName+"', '"+address+"', "+phoneNumber+", "+zip+", '"+email+"')";
+
+            myState.executeUpdate(sql);
             //4.Execute query for child table
-            ResultSet rs = myState.executeQuery("SELECT * from parent");
+            //ResultSet rs = myState.executeQuery("SELECT * from parent");
+
+
 
 
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Wrong input try again");
+        }
+
+
+    }
+
+    public void getParentData(){
+
+        try {
+            Connection connection = DriverManager.getConnection(url,user,password);
+
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM parent");
+            System.out.println("| Parent_id | dadName | momName | address | phoneNumber | zip | email |");
+            while (resultSet.next()){
+                System.out.println("| " + resultSet.getInt(1) + " | " + resultSet.getString(2) + " | " + resultSet.getString(3) + " | " + resultSet.getString(4) + " | " + resultSet.getInt(5) + " | " + resultSet.getInt(6) + " | " + resultSet.getString(7) + " |");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
