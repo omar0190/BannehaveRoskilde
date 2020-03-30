@@ -24,7 +24,7 @@ public class Schedule {
 
             do {
 
-                System.out.println("Do you want to add a new teacher to the kindergarden(y/n)");
+                System.out.print("Do you want to add a new teacher to the kindergarden(y/n) ");
                 String registerTeacherInput = scan.next();
                 if (registerTeacherInput.equals("y") || registerTeacherInput.equals("Y")) {
                     teacher.registerTeacher();
@@ -35,7 +35,7 @@ public class Schedule {
                 System.out.print("\nWhich teacher do you want to assign this shift to? (Type id): ");
                 teacher_id = scan.nextInt();
 
-                System.out.print("What date (0000-00-00): ");
+                System.out.print("What date (00-00-0000): ");
                 date = scan.next();
 
                 System.out.print("What time is the shift starting?: ");
@@ -69,7 +69,7 @@ public class Schedule {
 
         database.getScheduleData();
 
-        System.out.print("\nType the id number you want to edit?: ");
+        System.out.print("\nType the time_id number you want to edit?: ");
         int inputId = scan.nextInt();
 
         System.out.print("Which column do you want to edit?: ");
