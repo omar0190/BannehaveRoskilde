@@ -42,8 +42,7 @@ public class Menu {
 
                 //Menu 2
                 if (seletedNum == 2) {
-                    Database database = new Database();
-                    database.createParentData("a", "b", "c", 2332, 32443423, "a@.com");
+                    
                 }
 
                 //Menu 3
@@ -68,7 +67,7 @@ public class Menu {
 
                 //Menu 7
                 if (seletedNum == 7) {
-
+                    schedule.deleteSchedule();
                 }
 
                 //menu 8

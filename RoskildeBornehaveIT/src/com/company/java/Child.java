@@ -1,6 +1,7 @@
 package com.company.java;
 
 import java.util.*;
+
 public class Child {
     String name;
     int child_cpr;
@@ -13,7 +14,7 @@ public class Child {
     Database database = new Database();
     Parent parent = new Parent();
 
-    public void createChild(){ // Ikke færdig
+    public void createChild() { // Ikke færdig
 
         try {
             do {
@@ -36,25 +37,21 @@ public class Child {
                 System.out.println("Child registered");
                 System.out.println("Do you want to add more kids to the kindergarten (y/n)");
                 String moreKidsInput = scan.next();
-                if(moreKidsInput.equals("n") || moreKidsInput.equals("N")){
+                if (moreKidsInput.equals("n") || moreKidsInput.equals("N")) {
                     moreKids = false;
                 }
-            } while(moreKids);
-        }
-        catch (Exception e){
+            } while (moreKids);
+        } catch (Exception e) {
             System.out.println("Wrong input. Please try again");
         }
 
 
-
-
     }
 
-    public void getChildren(){
+    public void getChildren() {
         System.out.println("|List of Children|");
         database.getChildData();
     }
-
 
 
 }

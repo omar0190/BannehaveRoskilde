@@ -14,9 +14,9 @@ public class Teacher {
     Database database = new Database();
 
 
-    public void registerTeacher(){
+    public void registerTeacher() {
 
-        try{
+        try {
             System.out.print("Type the teacher name: ");
             name = scan.nextLine();
 
@@ -36,7 +36,7 @@ public class Teacher {
 
             System.out.println("");
 
-        }catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Please try again");
         }
 

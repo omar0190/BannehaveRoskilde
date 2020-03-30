@@ -65,7 +65,7 @@ public class Schedule {
 
     }
 
-    public void editSchedule(){
+    public void editSchedule() {
 
         database.getScheduleData();
 
@@ -82,8 +82,12 @@ public class Schedule {
 
     }
 
-    public void deleteSchedule(){
+    public void deleteSchedule() {
 
+        database.getScheduleData();
+        System.out.print("Type the shift_id you want to delete from the schedule?: ");
+        int deleteShift = scan.nextInt();
+        database.deleteScheduleData(deleteShift);
     }
 
     public void getSchedule() {

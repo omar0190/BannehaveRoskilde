@@ -1,7 +1,7 @@
 package com.company.java;
+
 import java.sql.*;
 import java.util.*;
-
 
 
 public class Parent {
@@ -18,9 +18,7 @@ public class Parent {
     Database database = new Database();
 
 
-
-
-    public void parentInfo(){
+    public void parentInfo() {
         try {
 
 
