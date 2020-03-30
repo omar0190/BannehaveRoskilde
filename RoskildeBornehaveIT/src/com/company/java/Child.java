@@ -54,34 +54,21 @@ public class Child {
     }
 
 
+    public void editChild() {
+
+        database.getChildData();
+
+        System.out.print("\nType the child_cpr number you want to edit?: ");
+        int inputId = scan.nextInt();
+
+        System.out.print("Which column do you want to edit?: ");
+        String columnName = scan.next();
+
+        System.out.print("Type the new data to insert?: ");
+        String newData = scan.next();
+
+        database.updateChildString(inputId, columnName, newData);
+    }
 }
-    /*public void editChild(){ // Ikke færdig
-        System.out.println("Do you want to edit a child (y/n)");
-        database.getChildData();
-        System.out.println("Input the ID of the child you want to edit");
-
-
-
-    }*/
-
-    /*
-    public void deleteChild(){ // Ikke færdig
-        int child_cpr = scan.nextInt();
-        System.out.println("Do you want to delete a child from list?(y/n): ");
-        database.getChildData();
-
-        System.out.println("Input social security number of the child you want to delete from the list");
-        Statement stmt = con.createStatement();
-
-        String query = "Delete from student where cpr= ' " + child_cpr + " ' ";
-        int result = stmt.executeUpdate(query);
-        if (result == 0){
-            System.out.println("Record not found to delete");
-        } else{
-            System.out.println(result +"no. of record(s) found and deleted");
-        }
-
-*/
-
 
 

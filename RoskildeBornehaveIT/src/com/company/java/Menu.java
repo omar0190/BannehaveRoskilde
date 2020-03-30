@@ -42,7 +42,7 @@ public class Menu {
 
                 //Menu 2
                 if (seletedNum == 2) {
-
+                child.editChild();
                 }
 
                 //Menu 3
