@@ -205,6 +205,15 @@ public class Database {
             String sql = "INSERT INTO child(child_cpr, name , pickupTime, teacher_id, parent_id) VALUES(" + child_cpr + ", '" + name + "', " + pickupTime + ", " + teacher_id + ", " + parent_id + ")";
             myState.executeUpdate(sql);
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Wrong input try again");
+        }
+
+
+    }
+
+
 
 
             /*
@@ -225,12 +234,7 @@ public class Database {
              */
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-
-    }
 
     public void createParentData(String dadName, String momName, String address, int zip, int phoneNumber, String email) {
         String url = "jdbc:mysql://den1.mysql4.gear.host/roskildeit123";
@@ -274,6 +278,28 @@ public class Database {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+    }
+    public static void updateChildString(int child_cpr, String whatToUpdate, String newInput) {
+        String url = "jdbc:mysql://den1.mysql4.gear.host/roskildeit123";
+        String user = "roskildeit123";
+        String password = "_Roskilde123";
+
+
+        try {
+            Connection myConnectData = DriverManager.getConnection(url, user, password);
+
+            Statement myStatement = myConnectData.createStatement();
+
+            //WhatToUpdate = column og newinput er hvad der skal være i column
+            myStatement.executeUpdate("update child set " + whatToUpdate + " = '" + newInput + "' where child_cpr = " + child_cpr);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
 
     }
