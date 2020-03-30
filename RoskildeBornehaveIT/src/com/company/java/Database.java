@@ -20,14 +20,20 @@ public class Database {
             //2.Create statement
             Statement myState = myCon.createStatement();
 
+            //5.insert data to schedule table
+            myState.executeUpdate("INSERT INTO schedule(teacher_id) VALUES(" + teacher_id + ")");
+
             ResultSet rs1 = myState.executeQuery("SELECT * from schedule");
             while (rs1.next()) {
                 shift_id = rs1.getInt(1);
             }
 
+
+
             //3.Execute query for database schedule time table
             myState.executeUpdate("INSERT INTO schedule_time(shift_id, date, start, end, duration) " +
                     "VALUES(" + shift_id + ",'" + date + "'," + startTime + "," + endTime + "," + duration + ")");
+
 /*
             //4.Execute query for schedule_time for get time_id
             ResultSet rs = myState.executeQuery("SELECT * from schedule_time");
@@ -53,7 +59,8 @@ public class Database {
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
+            System.out.println("Something went wrong. Please try again...");
         }
 
     }
@@ -61,9 +68,9 @@ public class Database {
     public void getScheduleData() {
 
 
-        Connection scheData = null;
+
         try {
-            scheData = DriverManager.getConnection(url, user, password);
+            Connection scheData = DriverManager.getConnection(url, user, password);
 
             Statement scheState = scheData.createStatement();
 //henter schedule tabel
@@ -86,7 +93,8 @@ public class Database {
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
+
+            System.out.println("Something went wrong. Please try again...");
         }
 
     }
@@ -263,6 +271,8 @@ public class Database {
 
     }
 
+
+
     public void getParentData() {
 
         try {
@@ -303,6 +313,8 @@ public class Database {
 
 
     }
+
+
 
 }
 
