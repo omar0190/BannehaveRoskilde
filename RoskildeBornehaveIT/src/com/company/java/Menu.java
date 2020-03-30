@@ -47,7 +47,7 @@ public class Menu {
 
                 //Menu 3
                 if (seletedNum == 3) {
-
+                child.deleteChild();
                 }
 
                 //Menu 4

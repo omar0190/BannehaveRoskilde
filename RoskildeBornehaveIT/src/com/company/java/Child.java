@@ -69,6 +69,18 @@ public class Child {
 
         database.updateChildString(inputId, columnName, newData);
     }
+
+    public void deleteChild() {
+
+        database.getChildData();
+        System.out.print("Type the child_cpr you want to delete from the child table: ");
+        int deleteChildCpr = scan.nextInt();
+        database.deleteChildData(deleteChildCpr);
+        getChild();
+        }
+    public void getChild() {
+        database.getChildData();
+    }
 }
 
 

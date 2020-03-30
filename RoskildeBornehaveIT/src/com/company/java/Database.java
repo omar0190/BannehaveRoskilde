@@ -313,6 +313,19 @@ public class Database {
 
 
     }
+    public void deleteChildData(int child_cpr) {
+        try {
+            Connection myConnectData = DriverManager.getConnection(url, user, password);
+
+            Statement myStatement = myConnectData.createStatement();
+
+            myStatement.executeUpdate("DELETE FROM child WHERE child_cpr = " + child_cpr);
+            myStatement.executeUpdate("DELETE FROM child WHERE child_cpr = " + child_cpr);
+            System.out.println("Child deleted");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
