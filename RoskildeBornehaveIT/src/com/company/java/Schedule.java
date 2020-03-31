@@ -4,12 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Schedule {
-    int teacher_id;
-    String time_id;
-    String date;
-    double startTime;
-    double endTime;
-    double duration;
+    private int teacher_id;
+    private String time_id;
+    private String date;
+    private double startTime;
+    private double endTime;
+    private double duration;
 
     Scanner scan = new Scanner(System.in);
     Database database = new Database();

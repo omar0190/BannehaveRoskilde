@@ -5,13 +5,13 @@ import java.util.*;
 
 
 public class Parent {
-    int parent_id;
-    String DadName;
-    String MomName;
-    String Address;
-    int phoneNumber;
-    String email;
-    int zip;
+    private int parent_id;
+    private String DadName;
+    private String MomName;
+    private String Address;
+    private int phoneNumber;
+    private String email;
+    private int zip;
 
 
     Scanner scan = new Scanner(System.in);

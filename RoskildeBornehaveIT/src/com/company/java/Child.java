@@ -3,12 +3,12 @@ package com.company.java;
 import java.util.*;
 
 public class Child {
-    String name;
-    int child_cpr;
-    double pickupTime;
-    int teacher_id;
-    int parent_id;
-    boolean moreKids = true;
+    private String name;
+    private int child_cpr;
+    private double pickupTime;
+    private int teacher_id;
+    private int parent_id;
+    private boolean moreKids = true;
 
     Scanner scan = new Scanner(System.in);
     Database database = new Database();

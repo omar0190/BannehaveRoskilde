@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class Teacher {
 
-    String name;
-    int phoneNumber;
-    String email;
-    int manager_id;
+    private String name;
+    private int phoneNumber;
+    private String email;
+    private int manager_id;
 
     Scanner scan = new Scanner(System.in);
     Database database = new Database();
